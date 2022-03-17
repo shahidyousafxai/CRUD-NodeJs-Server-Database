@@ -1,14 +1,13 @@
 const express = require('express')
 const bodyparser = require('body-parser')
+require('dotenv').config()
 const connection = require('./config/db.config')
-app = express()
-
-app.use(bodyparser.json())
+const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Node Server
-const PORT = process.env.PORT || 3001
+const PORT = 3000
 app.listen(PORT, () => console.log(`Server Connected Listening on ${PORT}`))
 
 // Get all data from database
